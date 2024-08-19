@@ -13,76 +13,80 @@ public class Ex47 {
     //vi. o nome da mulher mais baixa.
     //vii. – neste item, você cria uma situação interessante constrói o algoritmo correspondente.
 
-    public static void main(String[] argit gs) {
-        Scanner input = new Scanner(System.in);
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
 
-        int maxPacientes = 100;
-        String[] nomes = new String[maxPacientes];
-        char[] sexos = new char[maxPacientes];
-        double[] pesos = new double[maxPacientes];
-        int[] idades = new int[maxPacientes];
-        double[] alturas = new double[maxPacientes];
+        int qtePacientes = 0;
+        int qteHomens = 0;
+        int qteMulheresAlturaPeso = 0;
+        int qtePessoasIdade18a25 = 0;
+        int idadeMaisVelho = 0;
+        int somaIdadeHomens = 0;
+        int alturaMulherMaisBaixa = 999;
+        int alturaHomemMaisBaixa = 999;
+        double mediaIdadeHomens;
+        String nomePacienteMaisVelho = "", nomeMulherMaisBaixa = "", nomeHomemMaisBaixo = "";
 
-        int quantidadePacientes = 0;
-        int quantidadeHomens = 0;
-        int quantidadeMulheresAltas = 0;
-        int quantidadePessoasJovens = 0;
-        int idadeMaisVelho = Integer.MIN_VALUE;
-        String nomeMaisVelho = "";
-        double alturaMulherMaisBaixa = Double.MAX_VALUE;
-        String nomeMulherMaisBaixa = "";
+        while (true) {
+            System.out.println("Digite o nome do paciente " + (qtePacientes + 1) +
+                    " (ou digite fim para encerrar)");
+            String nome = sc.nextLine();
 
-        System.out.println("Digite os dados dos pacientes (nome, sexo, peso, idade, altura):");
-        while (quantidadePacientes < maxPacientes) {
-            String nome = input.next();
             if (nome.equalsIgnoreCase("fim")) {
                 break;
             }
 
-            char sexo = input.next().charAt(0);
-            double peso = input.nextDouble();
-            int idade = input.nextInt();
-            double altura = input.nextDouble();
+            System.out.println("Digite o gênero do paciente (M para masculino e F para feminino)");
+            String genero = sc.nextLine();
 
-            nomes[quantidadePacientes] = nome;
-            sexos[quantidadePacientes] = sexo;
-            pesos[quantidadePacientes] = peso;
-            idades[quantidadePacientes] = idade;
-            alturas[quantidadePacientes] = altura;
+            System.out.println("Digite o peso do paciente em kg");
+            double peso = sc.nextDouble();
 
-            quantidadePacientes++;
-        }
+            System.out.println("Digite a idade do paciente");
+            int idade = sc.nextInt();
 
-        for (int i = 0; i < quantidadePacientes; i++) {
-            if (sexos[i] == 'M') {
-                quantidadeHomens++;
-                if (idades[i] >= 18 && idades[i] <= 25) {
-                    quantidadePessoasJovens++;
+            System.out.println("Digite a altura do paciente em cm");
+            int altura = sc.nextInt();
+            sc.nextLine();
+
+            System.out.println();
+            qtePacientes++;
+
+            if (genero.equalsIgnoreCase("M")) {
+                qteHomens++;
+                somaIdadeHomens += idade;
+                if (altura < alturaHomemMaisBaixa) {
+                    alturaHomemMaisBaixa = altura;
+                    nomeHomemMaisBaixo = nome;
                 }
-            } else if (sexos[i] == 'F') {
-                if (alturas[i] < alturaMulherMaisBaixa) {
-                    alturaMulherMaisBaixa = alturas[i];
-                    nomeMulherMaisBaixa = nomes[i];
-                }
-                if (alturas[i] >= 1.60 && alturas[i] <= 1.70 && pesos[i] > 70) {
-                    quantidadeMulheresAltas++;
-                }
+
+            } else if (genero.equalsIgnoreCase("F") && altura < alturaMulherMaisBaixa) {
+                alturaMulherMaisBaixa = altura;
+                nomeMulherMaisBaixa = nome;
             }
 
-            if (idades[i] > idadeMaisVelho) {
-                idadeMaisVelho = idades[i];
-                nomeMaisVelho = nomes[i];
+            if (genero.equalsIgnoreCase("F") && altura >= 160 && altura <= 170 && peso > 70) {
+                qteMulheresAlturaPeso++;
+            }
+
+            if (idade >= 18 && idade <= 25) {
+                qtePessoasIdade18a25++;
+            }
+
+            if (idade > idadeMaisVelho) {
+                idadeMaisVelho = idade;
+                nomePacienteMaisVelho = nome;
             }
         }
 
-        double mediaIdadeHomens = quantidadeHomens > 0 ? (double) quantidadePessoasJovens / quantidadeHomens : 0;
+        mediaIdadeHomens = (double) somaIdadeHomens / qteHomens;
 
-        System.out.println("Relatório da Clínica");
-        System.out.println("Quantidade de pacientes: " + quantidadePacientes);
-        System.out.println("Média de idade dos homens: " + mediaIdadeHomens);
-        System.out.println("Quantidade de mulheres com altura entre 1,60 e 1,70 e peso acima de 70kg: " + quantidadeMulheresAltas);
-        System.out.println("Quantidade de pessoas com idade entre 18 e 25: " + quantidadePessoasJovens);
-        System.out.println("Nome do paciente mais velho: " + nomeMaisVelho);
-        System.out.println("Nome da mulher mais baixa: " + nomeMulherMaisBaixa);
+        System.out.println("\nA quantidade de pacientes é de: " + qtePacientes);
+        System.out.println("A média da idade dos homens é de: " + mediaIdadeHomens);
+        System.out.println("A quantidade de mulheres com altura entre 1,60 e 1,70 e peso acima de 70kg é de: " + qteMulheresAlturaPeso);
+        System.out.println("A quantidade de pessoas com idade entre 18 a 25 é de: " + qtePessoasIdade18a25);
+        System.out.println("O nome do paciente mais velho é: " + nomePacienteMaisVelho);
+        System.out.println("O nome da mulher mais baixa é: " + nomeMulherMaisBaixa);
+        System.out.println("O nome do homem mais baixo é: " + nomeHomemMaisBaixo);
     }
 }
