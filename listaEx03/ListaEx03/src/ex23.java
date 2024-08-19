@@ -1,4 +1,3 @@
-package projects.idea.estudo.introducao;
 
 import java.time.LocalDate;
 import java.util.Scanner;

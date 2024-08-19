@@ -1,4 +1,3 @@
-package projects.idea.estudo.introducao;
 
 import java.util.Scanner;
 

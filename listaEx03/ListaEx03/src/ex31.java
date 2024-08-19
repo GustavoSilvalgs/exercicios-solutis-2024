@@ -1,4 +1,3 @@
-package projects.idea.estudo.introducao;
 
 public class ex31 {
     public static void main(String[] args) {
