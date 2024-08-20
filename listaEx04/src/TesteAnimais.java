@@ -5,6 +5,8 @@ public class TesteAnimais {
         AnimalAB gato = new Gato();
         AnimalAB elefante = new Elefante();
         AnimalAB leao = new Leao();
+        AnimalMarinhoAB peixe = new Peixe();
+        AnimalVoadorAB pombo = new Pombo();
 
         System.out.println("Cachorro:");
         cachorro.comer();
@@ -28,6 +30,18 @@ public class TesteAnimais {
         leao.comer();
         leao.moverse();
         leao.dormir();
+        System.out.println();
+
+        System.out.println("Peixe:");
+        peixe.comer();
+        peixe.moverse();
+        peixe.dormir();
+        System.out.println();
+
+        System.out.println("Pombo:");
+        pombo.comer();
+        pombo.moverse();
+        pombo.dormir();
     }
 }
 
