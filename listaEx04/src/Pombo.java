@@ -1,5 +1,29 @@
 public class Pombo extends AnimalVoadorAB {
 
+    public Pombo(String nome, int idade, String habitat, double altura, double peso, double envergaduraAsas) {
+        super(nome, idade, habitat, altura, peso, envergaduraAsas);
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public int getIdade() {
+        return idade;
+    }
+
+    public String getHabitat() {
+        return habitat;
+    }
+
+    public double getAltura() {
+        return altura;
+    }
+
+    public double getPeso() {
+        return peso;
+    }
+
     @Override
     public void comer() {
         comidaIngerida += 10;
