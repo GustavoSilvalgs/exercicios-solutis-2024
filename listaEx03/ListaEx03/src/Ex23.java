@@ -2,7 +2,7 @@
 import java.time.LocalDate;
 import java.util.Scanner;
 
-public class ex23 {
+public class Ex23 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
