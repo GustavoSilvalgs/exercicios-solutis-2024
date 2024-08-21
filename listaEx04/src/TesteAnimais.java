@@ -1,40 +1,33 @@
 public class TesteAnimais {
     public static void main(String[] args) {
 
-        // Instanciando animais com parâmetros necessários
-        Cachorro cachorro = new Cachorro("Pity", 5, "Quintal", 0.30, 15.0);
-        Gato gato = new Gato("Milly", 9, "Quarto", 0.30, 5.3);
-        Elefante elefante = new Elefante("Orelhudo", 15, "Savana", 3.00, 400.0);
-        Leao leao = new Leao("Leo", 8, "Savana", 1.37, 190.0);
+        Cachorro cachorro = new Cachorro("Pity", 5, "Quintal", 4,0.30, 15.0);
+        Gato gato = new Gato("Milly", 9, "Quarto",4,4,2.50);
+        Elefante elefante = new Elefante("Orelhudo", 15, "Savana", 4,3.00, 400.0);
+        Leao leao = new Leao("Leo", 8, "Savana", 4,1.37, 190.0);
         Peixe peixe = new Peixe("Tilapia", 1, "Lago", 0.10, 0.5);
         Pombo pombo = new Pombo("Jubileu", 2, "Floresta", 0.25, 1.0, 1.0);
 
-        // Testando Cachorro
         System.out.println("Cachorro:");
         exibirDados(cachorro);
         System.out.println();
 
-        // Testando Gato
         System.out.println("Gato:");
         exibirDados(gato);
         System.out.println();
 
-        // Testando Elefante
         System.out.println("Elefante:");
         exibirDados(elefante);
         System.out.println();
 
-        // Testando Leão
         System.out.println("Leão:");
         exibirDados(leao);
         System.out.println();
 
-        // Testando Peixe
         System.out.println("Peixe:");
         exibirDados(peixe);
         System.out.println();
 
-        // Testando Pombo
         System.out.println("Pombo:");
         exibirDados(pombo);
     }

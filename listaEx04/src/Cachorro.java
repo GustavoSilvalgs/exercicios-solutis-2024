@@ -1,7 +1,7 @@
-public class Cachorro extends AnimalAB {
+public class Cachorro extends AnimalTerrestreAB {
 
-    public Cachorro(String nome, int idade, String habitat, double altura, double peso) {
-        super(nome, "Cachorro", idade, habitat, 4, 0, 0, altura, peso);
+    public Cachorro(String nome, int idade, String habitat, int quantidadePatas, double altura, double peso) {
+        super(nome, idade, habitat, quantidadePatas, altura, peso);
     }
 
     public String getNome() {

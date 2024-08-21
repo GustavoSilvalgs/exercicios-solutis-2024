@@ -1,7 +1,7 @@
-public class Elefante extends AnimalAB {
+public class Elefante extends AnimalTerrestreAB {
 
-    public Elefante(String nome, int idade, String habitat, double altura, double peso) {
-        super(nome, "Elefante", idade, habitat, 4, 0, 0, altura, peso);
+    public Elefante(String nome, int idade, String habitat, int quantidadePatas, double altura, double peso) {
+        super(nome, idade, habitat, quantidadePatas, altura, peso);
     }
 
     public String getNome() {
