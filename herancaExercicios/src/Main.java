@@ -7,7 +7,8 @@ public class Main {
 //        testarFornecedor(sc);
 //        testarEmpregado(sc);
 //        testarAdministrador(sc);
-        testarOperario(sc);
+//        testarOperario(sc);
+        testarVendedor(sc);
     }
 
     private static Pessoa coletarDadosPessoa(Scanner sc) {
@@ -88,6 +89,26 @@ public class Main {
         Operario operario = new Operario(pessoa.getNome(), pessoa.getEndereco(), pessoa.getTelefone(), codigoSetor, salarioBase, imposto, valorProducao, comissao);
         System.out.println("Salário com Comissão: " + operario.calcularSalario());
 
+        System.out.println();
+    }
+
+    private static void testarVendedor(Scanner sc) {
+        System.out.println("Teste Vendedor");
+        Pessoa pessoa = coletarDadosPessoa(sc);
+        System.out.print("Digite o código do setor: ");
+        int codigoSetor = sc.nextInt();
+        System.out.print("Digite o salário base: ");
+        double salarioBase = sc.nextDouble();
+        System.out.print("Digite a porcentagem de imposto: ");
+        double imposto = sc.nextDouble() / 100.0;
+        System.out.print("Digite o valor das vendas: ");
+        double valorVendas = sc.nextDouble();
+        System.out.print("Digite a porcentagem de comissão: ");
+        double comissao = sc.nextDouble() / 100.0;
+        sc.nextLine(); // Limpar o buffer do scanner
+
+        Vendedor vendedor = new Vendedor(pessoa.getNome(), pessoa.getEndereco(), pessoa.getTelefone(), codigoSetor, salarioBase, imposto, valorVendas, comissao);
+        System.out.println("Salário com Comissão: " + vendedor.calcularSalario());
         System.out.println();
     }
 }
