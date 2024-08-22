@@ -5,7 +5,8 @@ public class Main {
         Scanner sc = new Scanner(System.in);
 
 //        testarFornecedor(sc);
-        testarEmpregado(sc);
+//        testarEmpregado(sc);
+        testarAdministrador(sc);
     }
 
     private static Pessoa coletarDadosPessoa(Scanner sc) {
@@ -33,18 +34,37 @@ public class Main {
 //        System.out.println();
 //    }
 
-    private static void testarEmpregado(Scanner sc) {
-        System.out.println("Teste Empregado");
+//    private static void testarEmpregado(Scanner sc) {
+//        System.out.println("Teste Empregado");
+//        Pessoa pessoa = coletarDadosPessoa(sc);
+//        System.out.print("Digite o código do setor: ");
+//        int codigo = sc.nextInt();
+//        System.out.print("Digite o salário base: ");
+//        double salarioBase = sc.nextDouble();
+//        System.out.print("Digite a porcentagem de imposto: ");
+//        double imposto = sc.nextDouble() / 100.0;
+//
+//        Empregado empregado = new Empregado(pessoa.getNome(), pessoa.getEndereco(), pessoa.getTelefone(), codigo, salarioBase, imposto);
+//        System.out.println("Salário: " + empregado.calcularSalario());
+//
+//        System.out.println();
+//    }
+
+    private static void testarAdministrador(Scanner sc) {
+        System.out.println("Teste Administrador");
         Pessoa pessoa = coletarDadosPessoa(sc);
         System.out.print("Digite o código do setor: ");
-        int codigo = sc.nextInt();
+        int codigoSetor = sc.nextInt();
         System.out.print("Digite o salário base: ");
         double salarioBase = sc.nextDouble();
         System.out.print("Digite a porcentagem de imposto: ");
         double imposto = sc.nextDouble() / 100.0;
+        System.out.print("Digite o valor da ajuda de custo: ");
+        double ajudaDeCusto = sc.nextDouble();
+        sc.nextLine();
 
-        Empregado empregado = new Empregado(pessoa.getNome(), pessoa.getEndereco(), pessoa.getTelefone(), codigo, salarioBase, imposto);
-        System.out.println("Salário: " + empregado.calcularSalario());
+        Administrador administrador = new Administrador(pessoa.getNome(), pessoa.getEndereco(), pessoa.getTelefone(), codigoSetor, salarioBase, imposto, ajudaDeCusto);
+        System.out.println("Salário com Ajuda de Custo: " + administrador.calcularSalario());
 
         System.out.println();
     }
