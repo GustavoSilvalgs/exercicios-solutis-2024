@@ -24,4 +24,8 @@ public abstract class Animal {
     }
 
     public abstract void emitirSom();
+
+    public void correr() {
+        System.out.println(getNome() + " está correndo");
+    }
 }
