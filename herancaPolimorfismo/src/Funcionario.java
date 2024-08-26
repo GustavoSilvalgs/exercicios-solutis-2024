@@ -52,9 +52,8 @@ public class Funcionario {
 
     @Override
     public String toString() {
-        return "Nome: " + nome + "\nCódigo Funcional: " + codigoFuncional +
-                "\nRenda Base: R$ " + String.format("%.2f", rendaBase) +
-                "\nRenda Total: R$ " + String.format("%.2f", calcularRendaTotal()) +
-                (comissao != null ? "\nComissão: " + comissao.toString() : "");
+        return "Nome: " + nome +
+                (comissao != null ? "\nComissão: R$ " + String.format("%.2f", comissao.calcularSalarioComissao() - comissao.getSalario()) : "\nComissão: R$ 0.00") +
+                "\nSalário Total: R$ " + String.format("%.2f", calcularRendaTotal());
     }
 }
