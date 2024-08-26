@@ -1,7 +1,7 @@
 public class Main2 {
     public static void main(String[] args) {
 
-        int totalFuncionarios = 10;
+        /*int totalFuncionarios = 10;
         Funcionario[] funcionarios = new Funcionario[totalFuncionarios];
 
         int numBasico = (int) (totalFuncionarios * 0.40);
@@ -43,6 +43,25 @@ public class Main2 {
         System.out.println("Custo Total: R$ " + String.format("%.2f", custoTotal));
         System.out.println("Custo Ensino Básico: R$ " + String.format("%.2f", custoBasico));
         System.out.println("Custo Ensino Médio: R$ " + String.format("%.2f", custoMedio));
-        System.out.println("Custo Ensino Superior: R$ " + String.format("%.2f", custoSuperior));
+        System.out.println("Custo Ensino Superior: R$ " + String.format("%.2f", custoSuperior));*/
+
+        Comissao gc = new Gerente(1000.00);
+        Comissao sc = new Supervisor(1000.00);
+        Comissao vc = new Vendedor(1000.00);
+
+        Funcionario gerente = new Funcionario("Gustavo", "1234", gc);
+        Funcionario supervisor = new Funcionario("Silva", "4321", sc);
+        Funcionario vendedor = new Funcionario("Maria", "2580", vc);
+
+        System.out.println("Gerente:");
+        System.out.println(gerente);
+        System.out.println();
+
+        System.out.println("Supervisor:");
+        System.out.println(supervisor);
+        System.out.println();
+
+        System.out.println("Vendedor:");
+        System.out.println(vendedor);
     }
 }

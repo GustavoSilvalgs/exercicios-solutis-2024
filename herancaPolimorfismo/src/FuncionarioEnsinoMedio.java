@@ -1,8 +1,8 @@
 public class FuncionarioEnsinoMedio extends FuncionarioEnsinoBasico {
     private String escolaEnsinoMedio;
 
-    public FuncionarioEnsinoMedio(String nome, String codigoFuncional, String escolaEnsinoBasico, String escolaEnsinoMedio) {
-        super(nome, codigoFuncional, escolaEnsinoBasico);
+    public FuncionarioEnsinoMedio(String nome, String codigoFuncional, Comissao comissao, String escolaEnsinoBasico, String escolaEnsinoMedio) {
+        super(nome, codigoFuncional, comissao, escolaEnsinoBasico);
         this.escolaEnsinoMedio = escolaEnsinoMedio;
     }
 
